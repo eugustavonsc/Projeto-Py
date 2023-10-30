@@ -18,12 +18,17 @@ def refeitorio(): #menu de opções do refeitorio
 
 match menu_opcao():
     case 1:
-       escolha=cooperativa()
-       if escolha == 1:
-           with open("cooperativa.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
-               conteudo= arquivo.read()
-            print(conteudo)
-            
+       match cooperativa():
+           case 1:
+                with open("cooperativa.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
+                    conteudo= arquivo.read()
+                print(conteudo)
+           case 2:
+                with open("cooperativa.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
+                    conteudo= arquivo.read()
+                    
+
+
 
     case 2:
         refeitorio()
