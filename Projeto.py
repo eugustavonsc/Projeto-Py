@@ -15,7 +15,7 @@ def refeitorio(): #menu de opções do refeitorio
     if (op!=int):
         print("Digite um número valido!")
     return op
-
+#Codigo
 match menu_opcao():
     case 1:
        match cooperativa():
@@ -24,8 +24,11 @@ match menu_opcao():
                     conteudo= arquivo.read()
                 print(conteudo)
            case 2:
-                with open("cooperativa.txt","a") as arquivo: #leitura do arquivo e mostra o estoque detro dele
-                    arquivo.write(input("digite o item a ser adicionado ao estoque"))
+                matriz=[]
+                with open("cooperativa.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
+                    conteudo= arquivo.read()
+
+                    
 
 
 
