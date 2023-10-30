@@ -1,15 +1,18 @@
 #criação de um menu para o usuario selecionar qual setor ele quer conferir
 def menu_opcao():
-    op=int(input(" 1-Para cooperativa\n 2-Para Refeitorio\n 3-Para Agroindustria:\n"))
-    if (op!=int):
-        print("Digite um número valido!")
-    return op
+  print(" Bem vindo(a) ao IF Administra! Qual estoque você deseja entrar?\n 1-Cooperativa\n 2-Refeitorio\n 3-Agroindustria:\n")
+  while True:
+    try:
+      op = int(input("Digite um número: "))
+    except:
+      print("Você digitou uma letra. Por favor digite um número.")
+    else:
+      return op
 
 def cooperativa(): #menu de opções da coooperativa
-    op=int(input(" 1-Ver estoque\n 2-Adicionar item\n 3-Remover item:\n"))
-    if (op!=int):
-        print("Digite um número valido!")
+    op=int(input(" \nCooperativa! O que você deseja fazer?\n 1-Ver estoque\n 2-Adicionar item\n 3-Remover item\n 4-Voltar ao menu principal:\n"))
     return op
+
 def refeitorio(): #menu de opções do refeitorio
     op=int(input(" 1-Ver estoque\n 2-Adicionar item\n 3-Remover item:\n"))
     if (op!=int):
