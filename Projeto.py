@@ -52,10 +52,6 @@ match menu_opcao():
                 with open("cooperativa.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
                     conteudo= arquivo.read()
 
-                    
-
-
-
 
     case 2:
         refeitorio()
