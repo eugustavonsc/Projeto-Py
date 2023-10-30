@@ -16,13 +16,14 @@ def refeitorio(): #menu de opções do refeitorio
         print("Digite um número valido!")
     return op
 
-# match menu_opcao():
-#     case 1:
-#         cooperativa()
-#     case 2:
-#          refeitorio()
-#     case _:
-#         print("comando invalido\n" )
+match menu_opcao():
+    case 1:
+       escolha=cooperativa()
+
+    case 2:
+        refeitorio()
+    case _:
+        print("comando invalido\n" )
 
 def opcao():
     opc=0
