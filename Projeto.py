@@ -11,10 +11,17 @@ def cooperativa(): #menu de opções da coooperativa
         print("Digite um número valido!")
     return op
 
-match menu_opcao():
-    case 1:
-        cooperativa()
-    case _:
-        print("comando invalido\n" )
+# match menu_opcao():
+#     case 1:
+#         cooperativa()
+#     case _:
+#         print("comando invalido\n" )
 
-menu_opcao()
+def opcao():
+    opc=0
+    while (opc!=int):
+        opc=input("Digite um número:")
+            if (opc)
+    print("número digitado")
+
+opcao()
