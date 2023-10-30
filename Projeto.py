@@ -18,7 +18,7 @@ def refeitorio(): #menu de opções do refeitorio
     if (op!=int):
         print("Digite um número valido!")
     return op
-
+#Codigo
 match menu_opcao():
     case 1:
        match cooperativa():
@@ -27,9 +27,12 @@ match menu_opcao():
                     conteudo= arquivo.read()
                 print(conteudo)
            case 2:
+                matriz=[]
                 with open("cooperativa.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
                     conteudo= arquivo.read()
+
                     
+
 
 
 
@@ -38,11 +41,11 @@ match menu_opcao():
     case _:
         print("comando invalido\n" )
 
-def opcao():
-    opc=0
-    while (opc!=int):
-        opc=input("Digite um número:")
-            if (opc)
-    print("número digitado")
+#def opcao():
+#    opc=0
+#    while (opc!=int):
+#        opc=input("Digite um número:")
+#            if (opc)
+#    print("número digitado")
 
-opcao()
+#opcao()
