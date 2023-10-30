@@ -53,5 +53,5 @@ match menu_opcao():
                     conteudo= arquivo.read()
                     for linha in matriz:
                         for coluna in matriz:
-     #case _:
+     case _:
        print("Opção inválida")
