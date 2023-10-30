@@ -30,6 +30,7 @@ match menu_opcao():
                 matriz=[]
                 with open("cooperativa.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
                     conteudo= arquivo.read()
+                    matriz= conteudo.split("\n")
                     
 
                     
