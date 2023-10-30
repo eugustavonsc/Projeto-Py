@@ -49,9 +49,14 @@ match menu_opcao():
                 print(conteudo)
            case 2:
                 matriz=[]
+                texto=""
                 with open("cooperativa_log.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
                     conteudo= arquivo.read()
-                    for linha in matriz:
-                        for coluna in matriz:
+                    for i in range(1):
+                        for j in range(1):
+                            addEstoque= input("digite o item a ser adicionado ao estoque: ")
+                            qtdEstoque= int(input("digite a quantidade do item a ser adicionada ao estoque: "))
+                            matriz.append(addEstoque)
+                            matriz.append(qtdEstoque)
      case _:
        print("Opção inválida")
