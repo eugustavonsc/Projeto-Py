@@ -14,12 +14,3 @@ def cooperativa():
 #         cooperativa()
 #     case _:
 #         print("comando invalido\n" )
-
-def opcao():
-    opc=0
-    while (opc!=int):
-        opc=input("Digite um número:")
-            if (opc)
-    print("número digitado")
-
-opcao()
