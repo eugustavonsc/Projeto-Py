@@ -58,5 +58,6 @@ match menu_opcao():
                             qtdEstoque= int(input("digite a quantidade do item a ser adicionada ao estoque: "))
                             matriz.append(addEstoque)
                             matriz.append(qtdEstoque)
+                            
      case _:
        print("Opção inválida")
