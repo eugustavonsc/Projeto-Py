@@ -51,6 +51,10 @@ match menu_opcao():
                 matriz=[]
                 with open("cooperativa.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
                     conteudo= arquivo.read()
+                    for linha in matriz:
+                        matriz.append(input(""))
+                        for coluna in matriz:
+                            
 
 
     case 2:
