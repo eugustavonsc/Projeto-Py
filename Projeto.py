@@ -18,7 +18,7 @@ def refeitorio(): #menu de opções do refeitorio
 
 match menu_opcao():
     case 1:
-       escolha=cooperativa()
+       cooperativa()
 
     case 2:
         refeitorio()
