@@ -20,7 +20,7 @@ match menu_opcao():
     case 1:
        escolha=cooperativa()
        if escolha == 1:
-           with open("cooperativa.txt","r") as arquivo:
+           with open("cooperativa.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
                conteudo= arquivo.read()
             print(conteudo)
             
