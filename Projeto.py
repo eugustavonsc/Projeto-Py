@@ -49,15 +49,10 @@ match menu_opcao():
                 print(conteudo)
            case 2:
                 matriz=[]
-                with open("cooperativa.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
+                with open("cooperativa_log.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
                     conteudo= arquivo.read()
                     for linha in matriz:
                         matriz.append(input(""))
                         for coluna in matriz:
-                            
-
-
-    case 2:
-        refeitorio()
-    case _:
-        print("comando invalido\n" )
+     case _:
+       print("Opção inválida")
