@@ -10,10 +10,17 @@ def cooperativa(): #menu de opções da coooperativa
     if (op!=int):
         print("Digite um número valido!")
     return op
+def refeitorio(): #menu de opções do refeitorio
+    op=int(input(" 1-Ver estoque\n 2-Adicionar item\n 3-Remover item:\n"))
+    if (op!=int):
+        print("Digite um número valido!")
+    return op
 
 # match menu_opcao():
 #     case 1:
 #         cooperativa()
+#     case 2:
+#          refeitorio()
 #     case _:
 #         print("comando invalido\n" )
 
