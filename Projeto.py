@@ -1,7 +1,7 @@
 #criação de um menu para o usuario selecionar qual setor ele quer conferir
 def menu_opcao():
   print(" Bem vindo(a) ao IF Administra! Qual estoque você deseja entrar?\n 1-Cooperativa\n 2-Refeitorio\n 3-Agroindustria:\n")
-  while True:
+  while True: #teste para o usuario não inserir nada alem de numeros
     try:
       op = int(input("Digite um número: "))
     except:
