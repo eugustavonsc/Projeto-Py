@@ -52,7 +52,6 @@ match menu_opcao():
                 with open("cooperativa_log.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
                     conteudo= arquivo.read()
                     for linha in matriz:
-                        matriz.append(input(""))
                         for coluna in matriz:
      case _:
        print("Opção inválida")
