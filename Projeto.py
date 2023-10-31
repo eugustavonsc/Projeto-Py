@@ -59,5 +59,5 @@ match menu_opcao():
                             matriz.append(addEstoque)
                             matriz.append(qtdEstoque)
                             
-     case _:
+    case _:
        print("Opção inválida")
