@@ -10,7 +10,7 @@ def menu_opcao():
       return op
 
 def cooperativa(): #menu de opções da coooperativa
-    op=int(input(" \nCooperativa! O que você deseja fazer?\n 1-Ver estoque\n 2-Adicionar item\n 3-Remover item\n 4-Voltar ao menu principal:\n"))
+    print(" \nCooperativa! O que você deseja fazer?\n 1-Ver estoque\n 2-Adicionar item\n 3-Remover item\n 4-Voltar ao menu principal:\n")
     while True:
      try:
         op = int(input("Digite a opção desejada: "))
@@ -20,7 +20,7 @@ def cooperativa(): #menu de opções da coooperativa
         return op
 
 def refeitorio(): #menu de opções do refeitorio
-    op=int(input(" \nRefeitório! O que você deseja fazer?\n 1-Ver estoque\n 2-Adicionar item\n 3-Remover item\n 4-Voltar ao menu principal:\n"))
+    print(" \nRefeitório! O que você deseja fazer?\n 1-Ver estoque\n 2-Adicionar item\n 3-Remover item\n 4-Voltar ao menu principal:\n")
     while True:
      try:
         op = int(input("Digite a opção desejada: "))
@@ -30,7 +30,7 @@ def refeitorio(): #menu de opções do refeitorio
         return op
 
 def agroindustria(): #menu de opções do agroindustria
-    op=int(input(" \nAgroindústria! O que você deseja fazer?\n 1-Ver estoque\n 2-Adicionar item\n 3-Remover item\n 4-Voltar ao menu principal:\n"))
+    print(" \nAgroindústria! O que você deseja fazer?\n 1-Ver estoque\n 2-Adicionar item\n 3-Remover item\n 4-Voltar ao menu principal:\n")
     while True:
      try:
         op = int(input("Digite a opção desejada: "))
