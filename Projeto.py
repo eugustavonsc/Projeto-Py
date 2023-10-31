@@ -47,7 +47,7 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op√
             case 1:
                   with open("cooperativa_log.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
                      conteudo= arquivo.read()
-                  print('\n'conteudo)
+                  print(f'\n{conteudo}')
             case 2:
                   matriz=[]
                   texto=""
