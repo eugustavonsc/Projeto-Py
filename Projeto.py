@@ -51,26 +51,26 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                   dados_final=[]
                   with open("cooperativa_log.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
                      conteudo= arquivo.read()
-                     dados_colunas= conteudo.split(";") #separar os dados em colunas
-                     for linha in dados_colunas:
+                     dados_colunas= conteudo.split(";") #separar os dados em colunas, coloquei ";" pois estava dando conflito (com uma parte posterior do código) quando utilizava "\n"
+                     for linha in dados_colunas: #percorre a matriz "dados_colunas"
                         dados_linhas= linha.split(",") #separar as colunas em linhas
                         dados_final.append(dados_linhas)
                   print(f'\nO estoque contém:')
-                  for linha in dados_final:
+                  for linha in dados_final: #mostrar a matriz
                      print(linha)
             case 2:
                   matriz=[]
                   texto=""
                   with open("cooperativa_log.txt","a") as arquivo: #leitura do arquivo e mostra o estoque detro dele
                      Item=input("Digite o item a ser adicionado ao estoque: ")
-                     arquivo.write(f";{Item}")
+                     arquivo.write(f";{Item}") #adicionar o Item no arquivo
                      while True: #validar o input
                         try:
                            Quantidade=int(input("Digite a quantidade do item a ser adicionado ao estoque: "))
                         except:
                            print("\nVocê digitou uma letra. Por favor digite apenas número(s).\n")
                         else:
-                           arquivo.write(f",{Quantidade}")
+                           arquivo.write(f",{Quantidade}") #adicionar a Quantidade no arquivo
                            break
                      # conteudo= arquivo.read()
                      # for i in range(1):
