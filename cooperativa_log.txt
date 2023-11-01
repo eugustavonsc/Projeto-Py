@@ -1,1 +1,1 @@
-Coxinha,5;Pastel,10;Pirulito,6;Uva,11;panqueca,5
+Coxinha,5;Pastel,10;Pirulito,6;Uva,11;panqueca,5;esfirra,3
