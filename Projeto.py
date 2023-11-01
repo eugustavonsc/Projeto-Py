@@ -73,10 +73,10 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op√
                                  break
                   case 3:
                      conteudo=[]
-                     with open('cooperativa_log.txt','w') as arquivo:
+                     with open('cooperativa_log.txt','r+') as arquivo:
                         conteudo= arquivo.read()
                         localizar=input("digite o item que deseja excluir: ")
-                        conteudo.find(localizar)
+                        conteudo.index(localizar)
                         
                      
 
