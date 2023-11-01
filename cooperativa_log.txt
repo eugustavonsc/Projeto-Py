@@ -1,1 +1,1 @@
-Coxinha, pastel, abcde
+Coxinha,5;Pastel,10;Pirulito,6;Uva,11
