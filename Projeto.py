@@ -60,8 +60,6 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op√
                         for linha in dados_final: #mostrar a matriz
                            print(linha)
                   case 2:
-                        matriz=[]
-                        texto=""
                         with open("cooperativa_log.txt","a") as arquivo: #leitura do arquivo e mostra o estoque detro dele
                            Item=input("Digite o item a ser adicionado ao estoque: ")
                            arquivo.write(f";{Item}") #adicionar o Item no arquivo
@@ -73,6 +71,15 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op√
                               else:
                                  arquivo.write(f",{Quantidade}") #adicionar a Quantidade no arquivo
                                  break
+                  case 3:
+                     conteudo=[]
+                     with open('cooperativa_log.txt','w') as arquivo:
+                        conteudo= arquivo.read()
+                        localizar=input("digite o item que deseja excluir: ")
+                        conteudo.find(localizar)
+                        
+                     
+
                   case 4:
                      print("\nDesligando sistema. Obrigado por utiliz√°-lo ^^")
                      break
