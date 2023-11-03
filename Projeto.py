@@ -74,7 +74,7 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op√
                   case 3:
                      conteudo = {}
                      deletar= input("digite o item a ser excluido do estoque: ")
-                     with open('cooperativa_log.txt', 'r+') as arquivo:
+                     with open('cooperativa_log.txt', 'r') as arquivo:
                         for linha in arquivo: #Para cada linha no arquivo, dividimos a linha em pares separados por ponto e v√≠rgula.
                            pares = linha.strip().split(';')
                            for par in pares:
@@ -83,9 +83,10 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op√
                      consulta= deletar in conteudo
                      if consulta == True:
                       del conteudo[deletar]
-                        #FALTA ARRUMAR UM MODO DE SALVAR O ARQUIVO DE TEXTO COM O DICIONARIO/ OU CONVERTER ELE EM STRING
-                     
-
+                      convetido= str(conteudo)# convertendo dicionario em string para salvar em arquivo
+                     with open('cooperativa_log.txt', 'w') as arquivo:
+                        arquivo.write(convetido)
+                        #o arquivo fica salvo com os cochetes do dicionario, arrumar uma forma para remover isso ou muda o codigo de matriz para dicionario
                   case 4:
                      print("\nDesligando sistema. Obrigado por utiliz√°-lo ^^")
                      break
