@@ -60,17 +60,23 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                         for linha in dados_final: #mostrar a matriz
                            print(linha)
                   case 2:
-                        with open("cooperativa_log.txt","a") as arquivo: #leitura do arquivo e mostra o estoque detro dele
-                           Item=input("Digite o item a ser adicionado ao estoque: ")
-                           arquivo.write(f";{Item}") #adicionar o Item no arquivo
-                           while True: #validar o input
-                              try:
-                                 Quantidade=int(input("Digite a quantidade do item a ser adicionado ao estoque: "))
-                              except:
-                                 print("\nVocê digitou uma letra. Por favor digite apenas número(s).\n")
-                              else:
-                                 arquivo.write(f",{Quantidade}") #adicionar a Quantidade no arquivo
-                                 break
+                    estoque={}
+                    item=input("digite o item a ser adicionado ao estoque: ")
+                    quantidade=int(input("digite a quantidade desse item: "))
+                    # convertendo arquivo em dicionario
+                    with open("cooperativa_log.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
+                        conteudo= arquivo.read()
+                        conteudo= conteudo[1:-1] #remove os cochetes de abertura e fechamento do arquivo.
+                        print(conteudo)
+                        pares = conteudo.split(", ") #divide o texto em pares separados por ,
+                        for par in pares:
+                          chave, valor = par.split(": ") #separa a string do valor
+                          estoque[chave.strip("'")] = int(valor) #adiciona a chave e o valor ao dicionario removendo a aspas simples e so aceitando valores inteiros
+                    estoque[item]=quantidade
+                    #convertendo dicionario em string e atualizando arquivo de texto.
+                    converter_para_string= str(estoque)
+                    with open('cooperativa_log.txt', 'w') as arquivo:
+                        arquivo.write(converter_para_string)
                   case 3:
                      conteudo = {}
                      deletar= input("digite o item a ser excluido do estoque: ")
