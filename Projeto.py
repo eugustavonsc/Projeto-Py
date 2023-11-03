@@ -72,12 +72,18 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                                  arquivo.write(f",{Quantidade}") #adicionar a Quantidade no arquivo
                                  break
                   case 3:
-                     conteudo=[]
-                     with open('cooperativa_log.txt','r+') as arquivo:
-                        conteudo= arquivo.read()
-                        localizar=input("digite o item que deseja excluir: ")
-                        conteudo.index(localizar)
-                        
+                     conteudo = {}
+                     deletar= input("digite o item a ser excluido do estoque: ")
+                     with open('cooperativa_log.txt', 'r+') as arquivo:
+                        for linha in arquivo: #Para cada linha no arquivo, dividimos a linha em pares separados por ponto e vírgula.
+                           pares = linha.strip().split(';')
+                           for par in pares:
+                                 chave, valor = par.split(',')#dividimos cada par em chave e valor, separados por vírgula
+                                 conteudo[chave] = int(valor)#Convertemos o valor para um número inteiro
+                     consulta= deletar in conteudo
+                     if consulta == True:
+                      del conteudo[deletar]
+                        #FALTA ARRUMAR UM MODO DE SALVAR O ARQUIVO DE TEXTO COM O DICIONARIO/ OU CONVERTER ELE EM STRING
                      
 
                   case 4:
