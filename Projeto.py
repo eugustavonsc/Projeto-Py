@@ -67,7 +67,6 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op√
                     with open("cooperativa_log.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
                         conteudo= arquivo.read()
                         conteudo= conteudo[1:-1] #remove os cochetes de abertura e fechamento do arquivo.
-                        print(conteudo)
                         pares = conteudo.split(", ") #divide o texto em pares separados por ,
                         for par in pares:
                           chave, valor = par.split(": ") #separa a string do valor
