@@ -40,42 +40,42 @@ def agroindustria(): #menu de opções do agroindustria
         return op
 
 #Codigo
-#Obs: acho que se tirasse o menu_opção do match e deixasse só os outros menus, teria como deixar eles infinitos
 while True: #Deixar o programa rodando infinitamente, ao menos que escolha a opção para sair do programa
    match menu_opcao():
          case 1:
             while True:
                match cooperativa():
                   case 1:
-                        dados_colunas=[]
-                        dados_linhas=[]
-                        dados_final=[]
-                        with open("cooperativa_log.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
-                           conteudo= arquivo.read()
-                           dados_colunas= conteudo.split(";") #separar os dados em colunas, coloquei ";" pois estava dando conflito (com uma parte posterior do código) quando utilizava "\n"
-                           for linha in dados_colunas: #percorre a matriz "dados_colunas"
-                              dados_linhas= linha.split(",") #separar as colunas em linhas
-                              dados_final.append(dados_linhas)
-                        print(f'\nO estoque contém:')
-                        for linha in dados_final: #mostrar a matriz
-                           print(linha)
-                  case 2:
-                    estoque={}
-                    item=input("digite o item a ser adicionado ao estoque: ")
-                    quantidade=int(input("digite a quantidade desse item: "))
-                    # convertendo arquivo em dicionario
-                    with open("cooperativa_log.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
+                     with open("cooperativa_log.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
                         conteudo= arquivo.read()
                         conteudo= conteudo[1:-1] #remove os cochetes de abertura e fechamento do arquivo.
                         pares = conteudo.split(", ") #divide o texto em pares separados por ,
                         for par in pares:
-                          chave, valor = par.split(": ") #separa a string do valor
-                          estoque[chave.strip("'")] = int(valor) #adiciona a chave e o valor ao dicionario removendo a aspas simples e so aceitando valores inteiros
-                    estoque[item]=quantidade
-                    #convertendo dicionario em string e atualizando arquivo de texto.
-                    converter_para_string= str(estoque)
-                    with open('cooperativa_log.txt', 'w') as arquivo:
+                           print(par)
+                  case 2:
+                     estoque={}
+                     item=input("Digite o item a ser adicionado ao estoque: ")
+                     while True:
+                        try:
+                           quantidade = int(input("\nDigite a quantidade desse item: "))
+                        except:
+                           print("\nVocê digitou uma letra. Por favor digite apenas número.")
+                        else:
+                           break
+                     # convertendo arquivo em dicionario \/
+                     with open("cooperativa_log.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
+                        conteudo= arquivo.read()
+                        conteudo= conteudo[1:-1] #remove os cochetes de abertura e fechamento do arquivo.
+                        pares = conteudo.split(", ") #divide o texto em pares separados por ,
+                        for par in pares:
+                           chave, valor = par.split(": ") #separa a string do valor
+                           estoque[chave.strip("'")] = int(valor) #adiciona a chave e o valor ao dicionario removendo a aspas simples e so aceitando valores inteiros
+                     estoque[item]=quantidade
+                     #convertendo dicionario em string e atualizando arquivo de texto.
+                     converter_para_string= str(estoque)
+                     with open('cooperativa_log.txt', 'w') as arquivo:
                         arquivo.write(converter_para_string)
+                     print(f"O seu item {item} foi adicionado com a quantidade {quantidade} no sistema!")
                   case 3:
                      conteudo = {}
                      deletar= input("digite o item a ser excluido do estoque: ")
