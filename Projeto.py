@@ -95,6 +95,62 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                   case 4:
                      print("\nDesligando sistema. Obrigado por utilizá-lo ^^")
                      break
+         case 2:
+            while True:
+               match refeitorio():
+                  case 1:
+                     with open("refeitorio_log.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
+                        conteudo= arquivo.read()
+                        conteudo= conteudo[1:-1] #remove os cochetes de abertura e fechamento do arquivo.
+                        pares = conteudo.split(", ") #divide o texto em pares separados por ,
+                        for par in pares:
+                           print(par)
+                  case 2:
+                     estoque={}
+                     item=input("Digite o item a ser adicionado ao estoque: ")
+                     while True:
+                        try:
+                           quantidade = int(input("\nDigite a quantidade desse item: "))
+                        except:
+                           print("\nVocê digitou uma letra. Por favor digite apenas número.")
+                        else:
+                           break
+                     # convertendo arquivo em dicionario \/
+                     with open("refeitorio_log.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
+                        conteudo= arquivo.read()
+                        conteudo= conteudo[1:-1] #remove os cochetes de abertura e fechamento do arquivo.
+                        pares = conteudo.split(", ") #divide o texto em pares separados por ,
+                        for par in pares:
+                           chave, valor = par.split(": ") #separa a string do valor
+                           estoque[chave.strip("'")] = int(valor) #adiciona a chave e o valor ao dicionario removendo a aspas simples e so aceitando valores inteiros
+                     estoque[item]=quantidade
+                     #convertendo dicionario em string e atualizando arquivo de texto.
+                     converter_para_string= str(estoque)
+                     with open('refeitorio_log.txt', 'w') as arquivo:
+                        arquivo.write(converter_para_string)
+                     print(f"O seu item {item} foi adicionado com a quantidade {quantidade} no sistema!")
+                  case 3:
+                     conteudo = {}
+                     deletar= input("digite o item a ser excluido do estoque: ")
+                     with open('refeitorio_log.txt', 'r') as arquivo:
+                        for linha in arquivo: #Para cada linha no arquivo, dividimos a linha em pares separados por ponto e vírgula.
+                           pares = linha.strip().split(';')
+                           for par in pares:
+                                 chave, valor = par.split(',')#dividimos cada par em chave e valor, separados por vírgula
+                                 conteudo[chave] = int(valor)#Convertemos o valor para um número inteiro
+                     consulta= deletar in conteudo
+                     if consulta == True:
+                      del conteudo[deletar]
+                      convetido= str(conteudo)# convertendo dicionario em string para salvar em arquivo
+                     with open('refeitorio_log.txt', 'w') as arquivo:
+                        arquivo.write(convetido)
+                        #o arquivo fica salvo com os cochetes do dicionario, arrumar uma forma para remover isso ou muda o codigo de matriz para dicionario
+                  case 4:
+                     print("\nDesligando sistema. Obrigado por utilizá-lo ^^")
+                     break
+
+
+
                                  
          case 4:
             print("\nDesligando sistema. Obrigado por utilizá-lo ^^")
