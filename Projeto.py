@@ -276,6 +276,5 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
          case 4:
             print("\nDesligando sistema. Obrigado por utilizá-lo ^^")
             break
-
          case _:
             print("\nOpção inválida. Selecione uma opção do menu: ")
