@@ -1,0 +1,1 @@
+{'Leite': 50, 'Leitinho': 100}
