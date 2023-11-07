@@ -1,1 +1,1 @@
-{'Coxinha': 5, 'Pastel': 10, 'Pirulito': 6, 'Uva': 11, 'panqueca': 5, 'esfirra': 3, 'Abrobra': 1, 'uva': 9, 'a': 2, 'x': 5, 'z': 8, 'boca': 6, 'palmito': 6}
+{'Coxinha': 5, 'Pastel': 10, 'Pirulito': 6, 'panqueca': 5, 'esfirra': 3, 'Abrobra': 1, 'uva': 9, 'a': 2, 'x': 5, 'z': 8, 'boca': 6, 'palmito': 6}

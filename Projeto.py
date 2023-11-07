@@ -77,21 +77,22 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                         arquivo.write(converter_para_string)
                      print(f"O seu item {item} foi adicionado com a quantidade {quantidade} no sistema!")
                   case 3:
-                     conteudo = {}
+                     estoque = {}
                      deletar= input("digite o item a ser excluido do estoque: ")
                      with open('cooperativa_log.txt', 'r') as arquivo:
-                        for linha in arquivo: #Para cada linha no arquivo, dividimos a linha em pares separados por ponto e vírgula.
-                           pares = linha.strip().split(';')
-                           for par in pares:
-                                 chave, valor = par.split(',')#dividimos cada par em chave e valor, separados por vírgula
-                                 conteudo[chave] = int(valor)#Convertemos o valor para um número inteiro
-                     consulta= deletar in conteudo
+                        conteudo= arquivo.read()
+                     conteudo= conteudo[1:-1] #removendo cochete do inicio e do final
+                     pares= conteudo.split(", ") #dividindo o conteudo em pares separados por ,
+                     for par in pares:
+                        chave, valor = par.split(": ") #separa a string do valor
+                        estoque[chave.strip("'")] = int(valor) #adiciona a chave e o valor ao dicionario removendo a aspas simples e so aceitando valores inteiros
+                     consulta= deletar in estoque
                      if consulta == True:
-                      del conteudo[deletar]
-                      convetido= str(conteudo)# convertendo dicionario em string para salvar em arquivo
+                        del estoque[deletar]
+                     convetido= str(estoque)# convertendo dicionario em string para salvar em arquivo
                      with open('cooperativa_log.txt', 'w') as arquivo:
                         arquivo.write(convetido)
-                        #o arquivo fica salvo com os cochetes do dicionario, arrumar uma forma para remover isso ou muda o codigo de matriz para dicionario
+                     #o arquivo fica salvo com os cochetes do dicionario, arrumar uma forma para remover isso ou muda o codigo de matriz para dicionario
                   case 4:
                      print("\nDesligando sistema. Obrigado por utilizá-lo ^^")
                      break
