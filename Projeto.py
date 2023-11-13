@@ -1,50 +1,50 @@
-#criação de um menu para o usuario selecionar qual setor ele quer conferir
-def menu_opcao():
+def menu_opcao(): #criação de um menu para o usuario selecionar qual setor ele quer conferir o estoque
   print("\nBem vindo(a) ao IF Administra! Qual estoque você deseja entrar?\n 1-Cooperativa\n 2-Refeitorio\n 3-Agroindustria\n 4-Sair do programa")
-  while True: #validar a opção do input
-    try:
+  while True: #para deixar o while infinito
+    try: #faz com que o Python tente executar o código abaixo e caso não consiga irá entrar no except
       op = int(input("\nDigite a opção desejada: "))
-    except:
-      print("\nVocê digitou uma letra. Por favor digite apenas número.")
-    else:
+    except: #tratrando o erro. Irá aparecer a mensagem que está no print ao invés de um erro em inglês e que pode não ser intuitivo
+      print("\nVocê digitou uma letra ou um caracter inválido. Por favor digite apenas os números que estão no menu de opções.")
+    else: #aqui além de sair do while, irá retornar o valor da variável de op. Só irá passar por aqui caso não entre no except
       return op
 
 def cooperativa(): #menu de opções da coooperativa
     print(" \nCooperativa! O que você deseja fazer?\n 1-Ver estoque\n 2-Adicionar item\n 3-Remover item\n 4-Voltar ao menu principal")
-    while True:
-     try:
+    while True: #para deixar o while infinito
+     try: #faz com que o Python tente executar o código abaixo e caso não consiga irá entrar no except
         op = int(input("\nDigite a opção desejada: "))
-     except:
+     except: #tratrando o erro. Irá aparecer a mensagem que está no print ao invés de um erro em inglês e que pode não ser intuitivo
         print("\nVocê digitou uma letra. Por favor digite apenas número.")
-     else:
+     else: #aqui além de sair do while, irá retornar o valor da variável de op. Só irá passar por aqui caso não entre no except
         return op
 
 def refeitorio(): #menu de opções do refeitorio
     print(" \nRefeitório! O que você deseja fazer?\n 1-Ver estoque\n 2-Adicionar item\n 3-Remover item\n 4-Voltar ao menu principal")
-    while True:
-     try:
+    while True: #para deixar o while infinito
+     try: #faz com que o Python tente executar o código abaixo e caso não consiga irá entrar no except
         op = int(input("\nDigite a opção desejada: "))
-     except:
+     except: #tratrando o erro. Irá aparecer a mensagem que está no print ao invés de um erro em inglês e que pode não ser intuitivo
         print("\nVocê digitou uma letra. Por favor digite apenas número.")
-     else:
+     else: #aqui além de sair do while, irá retornar o valor da variável de op. Só irá passar por aqui caso não entre no except
         return op
 
 def agroindustria(): #menu de opções do agroindustria
     print(" \nAgroindústria! O que você deseja fazer?\n 1-Ver estoque\n 2-Adicionar item\n 3-Remover item\n 4-Voltar ao menu principal")
-    while True:
-     try:
+    while True: #para deixar o while infinito
+     try: #faz com que o Python tente executar o código abaixo e caso não consiga irá entrar no except
         op = int(input("\nDigite a opção desejada: "))
-     except:
+     except: #tratrando o erro. Irá aparecer a mensagem que está no print ao invés de um erro em inglês e que pode não ser intuitivo
         print("\nVocê digitou uma letra. Por favor digite apenas número.")
-     else:
+     else: #aqui além de sair do while, irá retornar o valor da variável de op. Só irá passar por aqui caso não entre no except
         return op
 
 #Codigo
-while True: #Deixar o programa rodando infinitamente, ao menos que escolha a opção para sair do programa
-   match menu_opcao():
+
+while True: #deixa o programa rodando infinitamente, ao menos que escolha a opção para sair do programa
+   match menu_opcao(): #no match já inserimos a função
          case 1:
-            while True:
-               match cooperativa():
+            while True: #faz com que o menu da cooperativa rode infinitamente ao menos que escolha a opção para sair do programa
+               match cooperativa(): #no match já inserimos a função
                   case 1:
                      print("\nO estoque da cooperativa possui: ")
                      with open("cooperativa_log.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
@@ -58,17 +58,17 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                      
                      while True:
                         item = input("\nDigite o item a ser adicionado ao estoque: ")
-                        if item.isalpha()==True:
+                        if item.isalpha()==True: #comenta aqui Gustavo, esqueci o que faz :v
                            break
                         else:
                            print("\nDigite apenas letras.")
 
                      while True:
-                        try:
+                        try: #faz com que o Python tente executar o código abaixo e caso não consiga irá entrar no except
                            quantidade = int(input("\nDigite a quantidade desse item: "))
-                        except:
+                        except: #tratrando o erro. Irá aparecer a mensagem que está no print ao invés de um erro em inglês e que pode não ser intuitivo
                            print("\nVocê digitou uma letra. Por favor digite apenas número.")
-                        else:
+                        else: #aqui além de sair do while, irá retornar o valor da variável de op. Só irá passar por aqui caso não entre no except
                            break
 
                      # convertendo arquivo em dicionario \/
@@ -78,7 +78,7 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                         pares = conteudo.split(", ") #divide o texto em pares separados por ,
                         for par in pares:
                            chave, valor = par.split(": ") #separa a string do valor
-                           estoque[chave.strip("'")] = int(valor) #adiciona a chave e o valor ao dicionario removendo a aspas simples e so aceitando valores inteiros
+                           estoque[chave.strip("'")] = int(valor) #adiciona a chave e o valor ao dicionario removendo as aspas simples e só aceitando valores inteiros
                      estoque[item] = quantidade
                      #convertendo dicionario em string e atualizando arquivo de texto.
                      converter_para_string = str(estoque)
@@ -90,7 +90,7 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                      
                      while True:
                         deletar = input("\nDigite o item a ser excluido do estoque: ")
-                        if deletar.isalpha()==True:
+                        if deletar.isalpha()==True: #dá uma comentadinha aqui boy
                            break
                         else:
                            print("\nDigite apenas letras.")
@@ -104,10 +104,10 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                         estoque[chave.strip("'")] = int(valor) #adiciona a chave e o valor ao dicionario removendo a aspas simples e so aceitando valores inteiros
                      consulta= deletar in estoque
 
-                     if consulta == True:
+                     if consulta == True: #só irá entrar aqui se o o item inserido na variável deletar estiver no estoque
                         print("\nO item existe no estoque!")
                         del estoque[deletar]
-                        convetido= str(estoque)# convertendo dicionario em string para salvar em arquivo
+                        convetido= str(estoque)#convertendo dicionario em string para salvar em arquivo
                         with open('cooperativa_log.txt', 'w') as arquivo:
                            arquivo.write(convetido)
                         #o arquivo fica salvo com os cochetes do dicionario, arrumar uma forma para remover isso ou muda o codigo de matriz para dicionario
@@ -120,8 +120,8 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                      print("\nVoltando ao menu principal ^^")
                      break
          case 2:
-            while True:
-               match refeitorio():
+            while True: #faz com que o menu do refeitório rode infinitamente ao menos que escolha a opção para sair do programa
+               match refeitorio(): #no match já inserimos a função
                   case 1:
                      print("\nO estoque do refeitorio possui: ")
                      with open("refeitorio_log.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
@@ -135,17 +135,17 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                      
                      while True:
                         item = input("\nDigite o item a ser adicionado ao estoque: ")
-                        if item.isalpha()==True:
+                        if item.isalpha()==True: #comentadinha marota aqui (y)
                            break
                         else:
                            print("\nDigite apenas letras.")
 
                      while True:
-                        try:
+                        try: #faz com que o Python tente executar o código abaixo e caso não consiga irá entrar no except
                            quantidade = int(input("\nDigite a quantidade desse item: "))
-                        except:
+                        except: #tratrando o erro. Irá aparecer a mensagem que está no print ao invés de um erro em inglês e que pode não ser intuitivo
                            print("\nVocê digitou uma letra. Por favor digite apenas número.")
-                        else:
+                        else: #aqui além de sair do while, irá retornar o valor da variável de op. Só irá passar por aqui caso não entre no except
                            break
 
                      # convertendo arquivo em dicionario \/
@@ -167,7 +167,7 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                      
                      while True:
                         deletar = input("\nDigite o item a ser excluido do estoque: ")
-                        if deletar.isalpha()==True:
+                        if deletar.isalpha()==True: #já sabe né?!
                            break
                         else:
                            print("\nDigite apenas letras.")
@@ -179,9 +179,9 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                      for par in pares:
                         chave, valor = par.split(": ") #separa a string do valor
                         estoque[chave.strip("'")] = int(valor) #adiciona a chave e o valor ao dicionario removendo a aspas simples e so aceitando valores inteiros
-                     consulta= deletar in estoque
+                     consulta= deletar in estoque 
 
-                     if consulta == True:
+                     if consulta == True: #só irá entrar aqui se o o item inserido na variável deletar estiver no estoque
                         print("\nO item existe no estoque!")
                         del estoque[deletar]
                         convetido= str(estoque)# convertendo dicionario em string para salvar em arquivo
@@ -197,8 +197,8 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                      print("\nVoltando ao menu principal ^^")
                      break
          case 3:
-            while True:
-               match agroindustria():
+            while True: #faz com que o menu do agroindústria rode infinitamente ao menos que escolha a opção para sair do programa
+               match agroindustria(): #no match já inserimos a função
                   case 1:
                      print("\nO estoque do agroindustria possui: ")
                      with open("agroindustria_log.txt","r") as arquivo: #leitura do arquivo e mostra o estoque detro dele
@@ -212,17 +212,17 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                      
                      while True:
                         item = input("\nDigite o item a ser adicionado ao estoque: ")
-                        if item.isalpha()==True:
+                        if item.isalpha()==True: #comentadinha marota aqui (y)
                            break
                         else:
                            print("\nDigite apenas letras.")
 
                      while True:
-                        try:
+                        try: #faz com que o Python tente executar o código abaixo e caso não consiga irá entrar no except
                            quantidade = int(input("\nDigite a quantidade desse item: "))
-                        except:
+                        except: #tratrando o erro. Irá aparecer a mensagem que está no print ao invés de um erro em inglês e que pode não ser intuitivo
                            print("\nVocê digitou uma letra. Por favor digite apenas número.")
-                        else:
+                        else: #aqui além de sair do while, irá retornar o valor da variável de op. Só irá passar por aqui caso não entre no except
                            break
 
                      # convertendo arquivo em dicionario \/
@@ -244,7 +244,7 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                      
                      while True:
                         deletar = input("\nDigite o item a ser excluido do estoque: ")
-                        if deletar.isalpha()==True:
+                        if deletar.isalpha()==True: #:v
                            break
                         else:
                            print("\nDigite apenas letras.")
@@ -258,7 +258,7 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
                         estoque[chave.strip("'")] = int(valor) #adiciona a chave e o valor ao dicionario removendo a aspas simples e so aceitando valores inteiros
                      consulta= deletar in estoque
 
-                     if consulta == True:
+                     if consulta == True: #só irá entrar aqui se o o item inserido na variável deletar estiver no estoque
                         print("\nO item existe no estoque!")
                         del estoque[deletar]
                         convetido= str(estoque)# convertendo dicionario em string para salvar em arquivo
@@ -277,4 +277,4 @@ while True: #Deixar o programa rodando infinitamente, ao menos que escolha a op�
             print("\nDesligando sistema. Obrigado por utilizá-lo ^^")
             break
          case _:
-            print("\nOpção inválida. Selecione uma opção do menu: ")
+            print("\nPor favor, selecione uma das opções do menu: ")
