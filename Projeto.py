@@ -58,7 +58,7 @@ while True: #deixa o programa rodando infinitamente, ao menos que escolha a opç
                      
                      while True:
                         item = input("\nDigite o item a ser adicionado ao estoque: ")
-                        if item.isalpha()==True: #comenta aqui Gustavo, esqueci o que faz :v
+                        if item.isalpha()==True: #verifica se o usuario digitou somente string alfabetica.
                            break
                         else:
                            print("\nDigite apenas letras.")
@@ -90,7 +90,7 @@ while True: #deixa o programa rodando infinitamente, ao menos que escolha a opç
                      
                      while True:
                         deletar = input("\nDigite o item a ser excluido do estoque: ")
-                        if deletar.isalpha()==True: #dá uma comentadinha aqui boy
+                        if deletar.isalpha()==True: #verifica se o usuario digitou somente string alfabetica.
                            break
                         else:
                            print("\nDigite apenas letras.")
@@ -135,7 +135,7 @@ while True: #deixa o programa rodando infinitamente, ao menos que escolha a opç
                      
                      while True:
                         item = input("\nDigite o item a ser adicionado ao estoque: ")
-                        if item.isalpha()==True: #comentadinha marota aqui (y)
+                        if item.isalpha()==True: #verifica se o usuario digitou somente string alfabetica.
                            break
                         else:
                            print("\nDigite apenas letras.")
@@ -167,7 +167,7 @@ while True: #deixa o programa rodando infinitamente, ao menos que escolha a opç
                      
                      while True:
                         deletar = input("\nDigite o item a ser excluido do estoque: ")
-                        if deletar.isalpha()==True: #já sabe né?!
+                        if deletar.isalpha()==True: #verifica se o usuario digitou somente string alfabetica.
                            break
                         else:
                            print("\nDigite apenas letras.")
@@ -212,7 +212,7 @@ while True: #deixa o programa rodando infinitamente, ao menos que escolha a opç
                      
                      while True:
                         item = input("\nDigite o item a ser adicionado ao estoque: ")
-                        if item.isalpha()==True: #comentadinha marota aqui (y)
+                        if item.isalpha()==True: #verifica se o usuario digitou somente string alfabetica.
                            break
                         else:
                            print("\nDigite apenas letras.")
@@ -244,7 +244,7 @@ while True: #deixa o programa rodando infinitamente, ao menos que escolha a opç
                      
                      while True:
                         deletar = input("\nDigite o item a ser excluido do estoque: ")
-                        if deletar.isalpha()==True: #:v
+                        if deletar.isalpha()==True: #verifica se o usuario digitou somente string alfabetica.
                            break
                         else:
                            print("\nDigite apenas letras.")
